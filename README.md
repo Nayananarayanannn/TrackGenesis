@@ -15,3 +15,5 @@ Open a terminal on the directory
 ### `npm start`
 Access the web app at http://localhost:3000/
 Access the required product page either from the products dropdown list, from the carousel list, or at http://localhost:3000/ :id (where id is the product id)
+## Demo Video Link
+https://www.loom.com/share/d8e5df49f61a443088606ffe5936d016
