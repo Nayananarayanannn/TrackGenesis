@@ -1,10 +1,19 @@
-import React, { useEffect } from 'react'
-import './footer.css'
-import { BsFacebook, BsInstagram, BsPinterest, BsYoutube } from 'react-icons/bs'
-import { AiFillCopyrightCircle, AiFillGooglePlusCircle, AiFillTwitterCircle } from 'react-icons/ai';
-import Aos from 'aos';
+import React, { useEffect } from "react";
+import "./footer.css";
+import {
+  BsFacebook,
+  BsInstagram,
+  BsPinterest,
+  BsYoutube,
+} from "react-icons/bs";
+import {
+  AiFillCopyrightCircle,
+  AiFillGooglePlusCircle,
+  AiFillTwitterCircle,
+} from "react-icons/ai";
+import Aos from "aos";
 import "aos/dist/aos.css";
-    
+
 function SocialMedia() {
   useEffect(() => {
     Aos.init({});
@@ -13,6 +22,7 @@ function SocialMedia() {
   return (
     <>
       <footer className="flex-rw">
+        {/* contact sections */}
         <ul className="footer-list-top">
           <li>
             <h4
@@ -46,6 +56,8 @@ function SocialMedia() {
             </h4>
           </li>
         </ul>
+
+        {/* social media section */}
         <section className="footer-social-section flex-rw">
           <span
             data-aos="slide-right"
@@ -111,6 +123,8 @@ function SocialMedia() {
             </a>
           </span>
         </section>
+
+        {/* copyright section */}
         <section className="footer-bottom-section flex-rw">
           <div className="footer-bottom-wrapper">
             <AiFillCopyrightCircle /> 2022 @ Nayana Narayanan{" "}
@@ -142,4 +156,4 @@ function SocialMedia() {
   );
 }
 
-export default SocialMedia
+export default SocialMedia;

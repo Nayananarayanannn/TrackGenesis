@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
-function ProductTitle({title}) {
+function ProductTitle({ title }) {
   return (
     <div>
-        <h1 style={{fontFamily:'Rubik Moonrocks, cursive'}}>{title}</h1>
+      <h1 style={{ fontFamily: "Rubik Moonrocks, cursive" }}>{title}</h1>
     </div>
-  )
+  );
 }
 
-export default ProductTitle
+export default ProductTitle;
