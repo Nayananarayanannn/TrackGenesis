@@ -34,6 +34,7 @@ function ProductDescription({product}) {
         <div className="card__side card__side--back card__side--back-1">
           <div className="card__cta">
             <div className="card__price-box">
+            <h5 style={{color:"rgba(0,140,200,1)",textAlign:"center"}}>{product?.title}</h5>
               <p
                 style={{
                   color: "white",

@@ -6,16 +6,19 @@ import "slick-carousel/slick/slick-theme.css";
 import { Button, Card } from 'react-bootstrap';
 import Aos from 'aos';
 import "aos/dist/aos.css";
+import { ApiState } from '../../context/ApiProvider';
     
 function ProductCarousel() {
+
   useEffect(() => {
     Aos.init({});
   }, []);
 
-    const api = JSON.parse(localStorage.getItem("api"))
+  const { api,setApi } = ApiState();
+
   return (
     <div>
-      <div className="carousel-slider">
+      {api? (<div className="carousel-slider">
       <h2 data-aos="flip-down" data-aos-duration="1000"  style={{color:'white',fontFamily:'cursive',paddingBottom:"5vh"}}>Our Exciting products</h2>
         <Slider
           dots={false}
@@ -62,7 +65,7 @@ function ProductCarousel() {
             );
           })}
         </Slider>
-      </div>
+      </div>):(<><img style={{paddingTop:"10vh"}} src='https://my.coolstart.com/templates/default/img/games_loading.gif'/></>)}
     </div>
   );
 }

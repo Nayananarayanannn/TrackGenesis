@@ -1,17 +1,22 @@
-const axios = require("axios");
+import { useState } from 'react';
+import { ApiState } from '../context/ApiProvider';
 
-export const fetchApi = () => {
-  var config = {
-    method: "get",
-    url: "https://fakestoreapi.com/products",
-    headers: {},
-  };
+const axios = require('axios');
 
-  axios(config)
-    .then(function (response) {
-      localStorage.setItem("api", JSON.stringify(response.data));
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-};
+export const fetchApi = (api,setApi) => {
+    var config = {
+      method: "get",
+      url: "https://fakestoreapi.com/products",
+      headers: {},
+    };
+
+    axios(config)
+      .then(function (response) {
+        console.log(response.data)
+        setApi(response.data);
+        localStorage.setItem("api",JSON.stringify(response.data))
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+}

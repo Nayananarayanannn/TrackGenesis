@@ -5,19 +5,23 @@ import SocialMedia from './components/footer/SocialMedia';
 import NavbarSection from './components/header/NavbarSection';
 import ProductCarousel from './components/productcarousel/ProductCarousel';
 import { fetchApi } from './config/ApiLogic';
+import { ApiState } from './context/ApiProvider';
 import Home from './pages/Home';
 import ProductPage from './pages/ProductPage';
 
 function App() {
-  const api = JSON.parse(localStorage.getItem("api"))
 
+    const { api,setApi } = ApiState();
+    const apiLocal = JSON.parse(localStorage.getItem("api"))
+
+    // fetchData
     useEffect(() => {
       const handleFetch = async () => {
-        await fetchApi();
+        await fetchApi(api,setApi);
       };
       handleFetch();
     }, []);
-
+    
   return (
     <div className="App">
       <NavbarSection />
@@ -25,15 +29,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/:id" element={<ProductPage />} />
       </Routes>
-      {api ? (
         <ProductCarousel />
-      ) : (
-        <>
-        <h2 style={{color:"white"}}>LOADING...</h2>
-          <img src="https://media.giphy.com/media/1bKvCVN187FCKXfapZ/giphy.gif" />
-        </>
-      )}
-
       <SocialMedia />
     </div>
   );
